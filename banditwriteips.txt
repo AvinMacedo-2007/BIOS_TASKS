@@ -1,0 +1,199 @@
+overthewire bandit-
+
+bandit 0-1---
+1) connected to bandit server as user bandit0 using ssh command.
+(ssh -p 2220 bandit0@bandit.labs.overthewire.org  )---> ssh -p port_no username@(ip adress or hostname)
+2) used ls command which displayed all non-hidden files in the dictionary . There was only a text file named readme.
+3) used cat to display all the contents in the text file readme and got the flag - 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
+
+bandit 1-2 ---->
+1) tried to connect to bandit server as user bandit1 using ssh command , entered the previously found flag as password when asked.
+2)using ls displayed a file name '-' 
+3) could'nt read the file simply using cat -. Then understood that cat interprets - as standard input (stdin). So i uesd cat ./- ( means --- current dictionary -> file named -)
+also understood that we can use cat -- -( -- tells the command that everything after this is an argument , not an option.) . and thus got the flag in my terminal --> PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+
+bandit 2-3 ---->
+1) similarly like in the last level after doing ls a file named --spaces in this filename-- got displayed which we cannot simply cat .
+2) catted this file using the command cat ./--spaces\ in\ this\ filename-- , and got the flag ---> 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
+
+the\ in the above command after each word before the space is used to tell the shell to treat the following  character as a literal part of the filename rather than a separator .
+
+bandit 3-4 ---->
+1) similarly like in the last level after doing ls a dictionary named inhere was displayed . 
+2) used cd dictionary_name to get inside the dictionary.
+3) using ls did not show any file name . then used ls -la (which shows all the files present in long-list format) which displayed detailes of three files named . , .. , ...Hiding-From-You .
+40 then catted the 3rd file using cat ./...Hidimg-From-You and got the flag ----> xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq 
+
+bandit 4-5 ---->
+1) similarly like in the last level after doing ls a dictionary named inhere was displayed .
+2) used cd dictionary_name to get inside the dictionary.
+3) used ls in the dictionary which listed 10 file , -file00 , -file01 ... -file09.
+4) catted all the files one by one and got the flag in -file07.
+flag ---> 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+
+bandit 5-6 ----->
+1) similarly like in the last level after doing ls inside inhere , 20 similar dictionaries were displayed - maybehere00 to maybehere19.
+2) as the clues were given (human-readable ,1033 bytes in size ,not executable), i used 'find . -size 1033c' command which gave './maybehere07/.file2' which was relative file path to the file 'file2' inside maybehere07  .
+3) catted the file and got the flag
+flag ----> pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+
+
+bandit 6-7 ----->
+1) similarly like the last level , here we are given with the properties of the file (owned by user bandit7 ,owned by group bandit6 ,33 bytes in size)
+2) used 'find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null' command and got the file path
+in above command -type f says to match regular files , find / says to start searching from root and 2>/dev/null is used to redirect error messages to null.
+3) catted the file and got the flag.
+flag ----> Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+
+
+bandit 7-8 ----->
+1) It was given that "The password for the next level is stored in the file data.txt next to the word millionth" . So i used the command 'grep "millionth" data.txt' and a line got printed in my terminal containing the flag.
+flag -----> VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+
+bandit 8-9 ----->
+1) It was given that "The password for the next level is stored in the file data.txt and is the only line of text that occurs only once". So used command cat data.txt | sort and checked for the string which is not repeated . 
+we can also ues command " sort data.txt | uniq -u " , this will directly print the string.
+here we print -u so that we can print the string which occurs exactly once.
+
+
+bandit 9-10 ------>
+1) It is given that "The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters".
+first i used 'grep -a '.*=.*' data.txt and got a lot of crap text with words containing '=' highlited in red then i looked through it a found the string.
+
+the this command we use -a to consider the input as text ( as it was binary , it was not getting printed).
+2) later i understood that we can use ' strings data.txt' to covert data from binary to text. This time string was noticeable more easily. 
+
+flag ----> B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+
+
+bandit 10-11 ----->
+
+1) given that 'The password for the next level is stored in the file data.txt, which contains base64 encoded data' , so i used command 'base54 -d data.txt' , which returned the flag.
+here -d is used says to decode .
+flag -----> pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+
+
+bandit 11-12 ---->
+
+1) its given that 'The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions'.
+i used the command ' cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' " and got the flag .
+
+this comands does ROT13 to the file. 
+flag -----> GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
+
+
+
+bandit 12-13 ---->
+
+1) Given that 'The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed ' . I made a temp dic using  the command ' mktemp -d' , it returned the file /tmp/tmp.MccLSUm6FI .
+2) i got inside the dictionary and copied data.txt into it using ' cp ~/data.txt .'.
+3) then used xxd -r data.txt>test.txt to convert the hexadump back to binary and stores the output in test.txt file.
+3) used file test.txt command to check file type . it was gzip compressed data .t.txt 
+4) changed the name of test.txt to test.gz using mv.( otherwise i was unable to use gunzip command).
+5) used command gunzip test.gz.
+6) again checked file type , it gave bzip2 compressed data.
+7) changed name to test.out and used bunzip2 test.out
+8) then similary converted gzip file using gunzip then decoded tar archive using ;tar-xvf filename.bin',
+9) following same steps again and again i got a file named data8 .
+10) after catting the file i got flag.
+flag --->  qQYQiHOBPR8zR61qxYqX45quvihF2uzk
+
+
+bandit 13-14 --->
+
+1) it was given in the level goal that 'The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Look at the commands that logged you into previous bandit levels, and find out how to use the key for this level.
+If you need help with this level: a hint file can be found in the home directory.
+Make sure to read the error messages as they are informative.'
+so i read the file name 'HINT' but did'nt found much information. Then catted sshkey.private anf got --->
+
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+2) then saved this private key in a text file in my device in a file called sshkey.private.
+3) used ssh -p 2220 -i sshkey.private bandit14@bandit.labs.overthewire.org command and connected to the next level.
+
+
+bandit 14-15 --->
+1) uesd cat /etc/bandit_pass/bandit14 and got current password
+flag ----> aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
+2) used nc localhost 30000 and entered current password . It returned next password.
+nc ->netcat , here we are connecting to a different port in the same machine.
+flag --->pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
+
+
+bandit 15-16 ----->
+
+1) as user bandit14 i used command 'openssl s_client -connect localhost:30001'
+2) entered the current flag and it returned next flag.
+flag ---> kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
+
+
+bandit 16-17 --->
+
+1) used 'nmap -sV -p 31000-32000 localhost' command to scan all the ports in the given range.
+here -sV is used to check the service and the version 
+2) used openssl command and tried to connect to each of them . used -quiet with the command to remove noice.
+3) entered current password to each one of them and port 31790 returned private key.
+
+bandit 17-18 --->
+
+1) used command diff password.new password.old and aquired the flag.
+
+
+bandit 18-19 ---->
+
+1) in this level as we were getting logged out at the same moment we where logging in . 
+2) i used ssh -p 2220 bandit19@bandit.labs.overthewire.org cat readme . this connects and immediatly runs the command before disconnecting .
+got the flag -----> KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI
+
+
+bandit 19-20 ---->
+
+1) i ran command ./bandit20-do ls /etc/bandit_pass
+./bandit20-do is a setuid . when we execute a command using this at first , the command will be runned as user bandit20 instead od bandit19.
+
+bandit 20-21 ----->
+
+1) this time stuid is suconnect. 
+2) when I  ran ./suconnect  it asked to give the port along with it .
+3) used nmap localhost and tried to connect to different ports.
+4) then understood that it has to verify the command stored in the files in the same server to what we send .
+5) opened new terminal and used nc -l 12345 on the other terminal ./suconnect 12345 ,
+then gave the current password and got the next flag.
+
+flag -----> bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY
