@@ -1,0 +1,101 @@
+hello hackers
+
+intro to commands -
+1) entered hello to invoke hello command and got the flag .
+flag---> pwn.college{cLT7YLQz2JLwIpC3WmP4Qhh4B40.QX3YjM1wCMzQTMxIzW}
+
+intro to arguments -
+1)just ran hello command with argument hackers and got flag ---> pwn.college{YztckqS6hmeyroeuBiSTH2JJsoU.QX4YjM1wCMzQTMxIzW}
+
+command history -
+1) uesd upward arrow key and got flag ---> pwn.college{AGUOXuoOEyyshZAcjME6PEqdIVi.0lNzEzNxwCMzQTMxIzW}
+
+
+Pondering Paths 
+
+the root -
+1)invoked pwn command uning its absolute path (/pwn) and got the flag ----> pwn.college{0CgPA5LjKsswJ0tNhIuYhlg2Qzg.QX4cTO0wCMzQTMxIzW}
+
+program and absolute paths -
+1)similarly like in the last challenge , i did /challenge/run and got flag ----> pwn.college{ovh2mqo4kaqFYRW-4om8weHZFGl.QX1QTN0wCMzQTMxIzW}
+
+position thy self-
+1) this challenge required us to go into a specified dictionary (/sys) using cd command and then run '/challenge/run'. then got the flag -----> pwn.college{Md8sfnqkUUv2qy_9718CL39HhTw.QX2QTN0wCMzQTMxIzW}
+
+
+position elsewhere -
+1) after running '/challenge/run' it gave the next dictionary from where we have to run the same command.
+2) then got the next dictionary from where we have to do the same .
+3) after repeating few times got the flag ---> pwn.college{sAojkC7TRnqV_dmmDLHxCAjoSfm.QX3QTN0wCMzQTMxIzW}
+
+implicit relative paths from / -
+1)in this challenge first we have to change our dictionary to / using cd , then run 'challenge/run'.
+got the flag in return ----> pwn.college{UZ60tQJMxCKxCm3o2cl7PYWkdeZ.QX5QTN0wCMzQTMxIzW}
+
+explicit relative paths from / - 
+1) ran /challenge/run and got flag ----> pwn.college{4S8aG_tkrp6XgsoabMBerXuEPQH.QXwUTN0wCMzQTMxIzW}
+
+implicit relative path -
+1) used cd to get in /challenge dictionary .
+2) then used ./run and got the flag ----> pwn.college{8e6caQjx99YgrzbnWwpCQBrHN9F.QXxUTN0wCMzQTMxIzW}
+
+
+home sweet home -
+1) ran '/challenge/run ~/r' to run the command /challenge/run in ~/r file and got the flag.
+flag ----> pwn.college{8X98DNXKhddUP6kPGIR5XXU3C1s.QXzMDO0wCMzQTMxIzW}
+
+COMPREHENDING COMMANDS
+
+cat: not the pet, but the command! -
+1) used cat flag to get the flag.
+flag----->pwn.college{wcHqduZTxne5EUTmt3BIu7sZLr3.QXxcTN0wCMzQTMxIzW}
+
+catting absolute path -
+1) used cat /flag  to cat using absolute path.
+got flag ----->pwn.college{YguFtb5XRdiFZqeCR5TBcehdBPo.QX5ETO0wCMzQTMxIzW}
+
+more catting practice -
+1) just used cat /usr/share/pam/flag (path was already given) and got the flag---> pwn.college{4zOFpxXBasZw5CzpdXB-He_SPEa.QXwITO0wCMzQTMxIzW}
+
+
+grepping for a needle in a haystack-
+1) just used grep pwn.college /challenge/data.txt and got the flag---> pwn.college{cxbyo3M9HaJcGncx8PMeFTqDo3v.QX3EDO0wCMzQTMxIzW}
+
+grep is used to search for a line containing a particular word in a file.
+
+
+comparing files-
+1) used diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt command and got output -
+39a40
+> pwn.college{IGafa9GzgrU7r6eNnQ_9iDrwNj5.01MwMDOxwCMzQTMxIzW}
+
+here 39 means 39th line from first file and 40 means 40th line from second file. a means add .
+
+listing files-
+1) used ls command which showed two file , catted first one (/challenge/17781-renamed-run-9620) and got the flag.
+flag ----> pwn.college{EIIlhmRfjmblfB3Em0Kf1kBiq6O.QX4IDO0wCMzQTMxIzW}
+
+
+touching files -
+1) created two files using 'touch /tmp/pwn /tmp/college' .
+2)runned command '/challenge/run' and got the flag.
+
+flag---> pwn.college{s0ImdKGi5I7Bv2NP5Q5FwO00P_g.QXwMDO0wCMzQTMxIzW}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
