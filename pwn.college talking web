@@ -1,0 +1,19 @@
+level 1 --->
+  1) ran /challenge/server in terminal and got back the url we should search for in web browser .
+  2) opened pwn workspace , then firefox then pasted the url and got the flag in the web page.
+   flag----> pwn.college{cniH9tVU3rOTNIqt_5W8hzRNW1z.0lMxgDNxwCMzQTMxIzW}
+
+level 2 --->
+  1) ran /challenge/server in terminal and got back the url we should search for in web browser .
+  2) opened pwn workspace , then firefox then pasted the url then it showed not found.
+  3) then I catted the file /challenge/server and got the code , in that there was a line  ' @app.route("/qualify", methods=["GET"])' , which ment that the end point is /qualify.
+  4) then the adden the /qualify part at the end of the url and got the flag.
+     flag ----> pwn.college{omflZC4g6uI9yQx3rCPv_Ip-s3z.01MxgDNxwCMzQTMxIzW}
+
+level 3 --->
+  1) repeated the above steps and got the end poin as /task.
+  2) then the adden the /qualify part at the end of the url , went to the page source and got flag inside commented line.
+    flag ----> pwn.college{oF1YEGQ8MznIPE9einrSwwa5YD8.0FNxgDNxwCMzQTMxIzW}
+
+level 4 ---->
+  1)
