@@ -16,4 +16,71 @@ level 3 --->
     flag ----> pwn.college{oF1YEGQ8MznIPE9einrSwwa5YD8.0FNxgDNxwCMzQTMxIzW}
 
 level 4 ---->
-  1)
+  1) found the end point using the above steps (/meet).
+  2) after loading the the site , right clicked then clicked inspect then went to network and reloaded the page .
+  3) clicked on the file meet then went through the header and got the flag .
+     flag ----> pwn.college{oaq5NVdntnoyZUL9Ft0RoEMqEIk.0VNxgDNxwCMzQTMxIzW}
+
+level 5 ---->
+   1) found end point ---> /
+   2) launched server then opened terminal in workspace and connected to the server using command ' nc challenge.localhost 80' .
+   3) sent a get request as follows ---->
+                             GET / HTTP/1.1
+                             Host: challenge.localhost
+     and got the response header back which contained flag ----> pwn.college{g7qC73y1IGaplJjjPJhQAkvTk-B.QX5YjMzwCMzQTMxIzW}
+
+level 6 ---->
+   1) end point ---> /gateway
+   2) followed same steps as above but in get request specified path as /gateway --->
+                             GET /gateway HTTP/1.1
+                             Host: challenge.localhost
+      flag -----> pwn.college{QervwOGBghGvtN67wvw4LG1tfvV.QX1cjMzwCMzQTMxIzW}
+
+level 7 ---->
+   1) end point ---> /access
+   2) launched server
+   3) used command "curl http://challenge.localhost:80/access" in terminal of workspace and got the flag.
+                here curl is used to send user authentication data for server authentication . 
+   4) got flag ----> pwn.college{YJlwHY39bSbAAXsd5KqciO73f5d.QX0cjMzwCMzQTMxIzW}
+
+level 8 ----->
+   1) got end point ---> /qualify
+   2) launched server
+   3) in terminal of workspace made a file named r.py and wrote the following code inside it --->
+                     import requests
+                     response = requests.get("http://challenge.localhost:80/qualify")
+                     print(response.text)
+      here response object from request.get is stored in response variable
+      response.text — displays the response body and print prints it.
+   4) the response body is printed in the terminal .
+           flag ----> pwn.college{0fpnN6E2cgYH0CWv3PuNfrKs6_W.QX2cjMzwCMzQTMxIzW}
+
+level 9 ---->
+   1) in terminal of workspace made a file named r.py and wrote the following code inside it --->
+                    import requests
+                    headers = {'Host': 'webhacking.kr:80'}
+                    response = requests.get("http://challenge.localhost:80/submit", headers=headers)
+                    print(response.text)
+      here we are coustamizing host header . we we got the server name and end point by catting challenge/server file.
+   2) after running this got the flag ----> pwn.college{UvlcTUO2ztJUCDaglI7FHacBqnT.QXzcjMzwCMzQTMxIzW}
+
+
+level 10 ---->
+   1) in the terminal of the workspace used the following command --->
+                            curl -H "Host: xss.pwnfunction.com:80" http://challenge.localhost:80/gateway
+      -H — specifies a custom HTTP header.
+      "Host: xss.pwnfunction.com:80" -- here we set the header .
+       http://challenge.localhost:80/gateway this is the url we are requesting.
+
+      flag ----> pwn.college{0iy1wrvKeiRRdgc_IL9hfM2PjGn.QXxcjMzwCMzQTMxIzW}
+
+
+level 11 ---->
+   1) in the terminal of the workspace used "nc challenge.localhost 80" to establish connection with the server
+
+      GET /hack HTTP/1.1
+      Host: 0xf.at:80
+
+      here we changed the host header .
+      flag -----> pwn.college{gFB93xzsrvdyLOclUVZXdpLdooR.QXycjMzwCMzQTMxIzW}
+
