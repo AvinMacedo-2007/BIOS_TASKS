@@ -1,9 +1,15 @@
 level 1 --->
+
+*YOUR FIRST HTTP REQUEST*
+
   1) ran /challenge/server in terminal and got back the url we should search for in web browser .
   2) opened pwn workspace , then firefox then pasted the url and got the flag in the web page.
    flag----> pwn.college{cniH9tVU3rOTNIqt_5W8hzRNW1z.0lMxgDNxwCMzQTMxIzW}
 
 level 2 --->
+
+*READING FLASK*
+
   1) ran /challenge/server in terminal and got back the url we should search for in web browser .
   2) opened pwn workspace , then firefox then pasted the url then it showed not found.
   3) then I catted the file /challenge/server and got the code , in that there was a line  ' @app.route("/qualify", methods=["GET"])' , which ment that the end point is /qualify.
@@ -11,17 +17,26 @@ level 2 --->
      flag ----> pwn.college{omflZC4g6uI9yQx3rCPv_Ip-s3z.01MxgDNxwCMzQTMxIzW}
 
 level 3 --->
+
+*COMMENTED DATA*
+
   1) repeated the above steps and got the end poin as /task.
   2) then the adden the /qualify part at the end of the url , went to the page source and got flag inside commented line.
     flag ----> pwn.college{oF1YEGQ8MznIPE9einrSwwa5YD8.0FNxgDNxwCMzQTMxIzW}
 
 level 4 ---->
+
+*HTTP METADATA*
+
   1) found the end point using the above steps (/meet).
   2) after loading the the site , right clicked then clicked inspect then went to network and reloaded the page .
   3) clicked on the file meet then went through the header and got the flag .
      flag ----> pwn.college{oaq5NVdntnoyZUL9Ft0RoEMqEIk.0VNxgDNxwCMzQTMxIzW}
 
 level 5 ---->
+
+*HTTP (NETCAT)*
+
    1) found end point ---> /
    2) launched server then opened terminal in workspace and connected to the server using command ' nc challenge.localhost 80' .
    3) sent a get request as follows ---->
@@ -30,6 +45,9 @@ level 5 ---->
      and got the response header back which contained flag ----> pwn.college{g7qC73y1IGaplJjjPJhQAkvTk-B.QX5YjMzwCMzQTMxIzW}
 
 level 6 ---->
+
+*HTTP PATHS (NETCAT)*
+
    1) end point ---> /gateway
    2) followed same steps as above but in get request specified path as /gateway --->
                              GET /gateway HTTP/1.1
@@ -37,6 +55,9 @@ level 6 ---->
       flag -----> pwn.college{QervwOGBghGvtN67wvw4LG1tfvV.QX1cjMzwCMzQTMxIzW}
 
 level 7 ---->
+
+*HTTP (CURL)*
+
    1) end point ---> /access
    2) launched server
    3) used command "curl http://challenge.localhost:80/access" in terminal of workspace and got the flag.
@@ -44,6 +65,9 @@ level 7 ---->
    4) got flag ----> pwn.college{YJlwHY39bSbAAXsd5KqciO73f5d.QX0cjMzwCMzQTMxIzW}
 
 level 8 ----->
+
+*HTTP (PYTHON)*
+
    1) got end point ---> /qualify
    2) launched server
    3) in terminal of workspace made a file named r.py and wrote the following code inside it --->
@@ -56,6 +80,9 @@ level 8 ----->
            flag ----> pwn.college{0fpnN6E2cgYH0CWv3PuNfrKs6_W.QX2cjMzwCMzQTMxIzW}
 
 level 9 ---->
+ 
+*HTTP HOST HEADER (PYTHON)*
+
    1) in terminal of workspace made a file named r.py and wrote the following code inside it --->
                     import requests
                     headers = {'Host': 'webhacking.kr:80'}
@@ -66,6 +93,9 @@ level 9 ---->
 
 
 level 10 ---->
+
+*HTTP HOSR HEADER (CURL)*
+
    1) in the terminal of the workspace used the following command --->
                             curl -H "Host: xss.pwnfunction.com:80" http://challenge.localhost:80/gateway
       -H — specifies a custom HTTP header.
@@ -76,6 +106,9 @@ level 10 ---->
 
 
 level 11 ---->
+
+*HTTP HOSR HEADER (NETCAT)*
+
    1) in the terminal of the workspace used "nc challenge.localhost 80" to establish connection with the server
 
       GET /hack HTTP/1.1
@@ -85,6 +118,8 @@ level 11 ---->
       flag -----> pwn.college{gFB93xzsrvdyLOclUVZXdpLdooR.QXycjMzwCMzQTMxIzW}
 
 level 12 --->
+
+ *URL ENCODING NETCAT*
 
    1) end point is ---> /submission gate task
    2) after encoding the eng path ---> /submission%20gate%20task (space is replaced by %20)
@@ -96,6 +131,9 @@ level 12 --->
          flag-----> pwn.college{0mtF83oolCGV5j0aOky2k1goXJz.QX5cjMzwCMzQTMxIzW}
 
 level 13 --->
+
+*HTTP GET PARAMETERS*
+
   # from reading the source code ---> pass=qslkkqxj, end point=/meet
 
      using firefor  ----->
@@ -115,6 +153,9 @@ level 13 --->
 
 
 level 14 --->
+
+*MULTIPLE HTTP PARAMETERS (NETCAT)*
+
     1) used the following command in terminal --->
           nc challenge.localhost 80
              GET /check?pass=clsazklj&keycode=zmxqebuu&auth_pass=vbxefpvy
@@ -124,6 +165,8 @@ level 14 --->
          flag ----> pwn.college{Q8M7Obaxz_wuYRFN757CQ3X97Ji.QX0gjMzwCMzQTMxIzW}
 
 level 15 --->
+
+*MULTIPLE HTTP PARAMETERS (CURL)*
 
     1)after launching the server , used following command in the terminal of workspace--->
            curl "http://challenge.localhost:80/gateway?auth_pass=ypgwmpcj&pass=wyijptmx&secret=xjvsesew"
