@@ -86,5 +86,53 @@ level 11 ---->
 
 level 12 --->
 
-   1) pwn.college{0mtF83oolCGV5j0aOky2k1goXJz.QX5cjMzwCMzQTMxIzW}
+   1) end point is ---> /submission gate task
+   2) after encoding the eng path ---> /submission%20gate%20task (space is replaced by %20)
+   3) launched server and used netcat to connect ---> 
+         nc challenge.localhost 80 
+         GET /submission%20gate%20task HTTP/1.1
+         Host: challenge.localhost
 
+         flag-----> pwn.college{0mtF83oolCGV5j0aOky2k1goXJz.QX5cjMzwCMzQTMxIzW}
+
+level 13 --->
+  # from reading the source code ---> pass=qslkkqxj, end point=/meet
+
+     using firefor  ----->
+       1) opened browser and  in url typed "http://challenge.localhost/meet?pass=qslkkqxj" and got the flag.
+          here -- Parameter: pass and Argument (value): qslkkqxj
+
+
+     using curl ---->
+       1) typed curl http://challenge.localhost:80/meet?pass=qslkkqxj in the terminal.
+
+     using netcat ---->
+
+       1) used the following command in terminal---->
+           nc challenge.localhost 80
+               GET /meet?pass=qslkkqxj HTTP/1.1  
+               Host: challenge.localhost
+
+
+level 14 --->
+    1) used the following command in terminal --->
+          nc challenge.localhost 80
+             GET /check?pass=clsazklj&keycode=zmxqebuu&auth_pass=vbxefpvy
+             Host: challenge.localhost
+      #$ eparates key-value pairs in a query string
+
+         flag ----> pwn.college{Q8M7Obaxz_wuYRFN757CQ3X97Ji.QX0gjMzwCMzQTMxIzW}
+
+level 15 --->
+
+    1)after launching the server , used following command in the terminal of workspace--->
+           curl "http://challenge.localhost:80/gateway?auth_pass=ypgwmpcj&pass=wyijptmx&secret=xjvsesew"
+
+           here qutes are important because In Linux, & runs the preceding command in the background, 
+           terminal interprets this as three separate commands:
+                     1. curl http://challenge.localhost:80/gateway?auth_pass=ypgwmpcj — runs in the background.
+                     2. pass=wyijptmx — treated as a separate command.
+                     3. secret=xjvsesew — treated as a separate command.
+
+
+                 flag ---->  pwn.college{cGaVf9EULHGnjl0wI_BhNULeiMR.QXzgjMzwCMzQTMxIzW}
