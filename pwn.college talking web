@@ -152,6 +152,9 @@ level 13 --->
                Host: challenge.localhost
 
 
+       flag ---> pwn.college{UwUO394-hvXu6GMH8fmKSnYj6TR.QXwgjMzwCMzQTMxIzW}
+
+
 level 14 --->
 
 *MULTIPLE HTTP PARAMETERS (NETCAT)*
