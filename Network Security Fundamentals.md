@@ -128,4 +128,8 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
   <h1>IP ADDRESS (INTERNET PROTOCOL ADDRESS)</h1>
 
   An IP address is a unique number assigned to every device connected to a network, so it can send and receive data.
+
+  Two types of ip address are there -
+   - IPv4 and
+   - IPv6
   
