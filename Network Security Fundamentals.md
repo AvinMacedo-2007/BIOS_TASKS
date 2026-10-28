@@ -120,4 +120,12 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
 
   <img width="919" height="719" alt="image" src="https://github.com/user-attachments/assets/3fe128b0-4e12-4524-90a5-4225d07d5b81" />
 
+
+
+
+
+
+  <h1>IP ADDRESS (INTERNET PROTOCOL ADDRESS)</h1>
+
+  An IP address is a unique number assigned to every device connected to a network, so it can send and receive data.
   
