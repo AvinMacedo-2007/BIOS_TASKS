@@ -79,6 +79,7 @@ Functions of network layer are -
   - Logical addressing
   - Path determination
   - Routing
+  - 
     
 ip addressing done in network layer in called logical addressing.
 senders and receivers ip addresses are assigned to each segment to form an ip packet, ip addresses are assigned to ensure that each data packet can reach the correct destination.
@@ -98,5 +99,25 @@ A MAC address is a unique 48-bit hardware ID (e.g., AA:BB:CC:DD:EE:FF) burned in
 
 Unlike an IP address which changes per network, a MAC address is fixed to the hardware — it's your device's fingerprint.
 The Data Link Layer handles node-to-node delivery — moving data between two devices that are directly connected on the same network segment (e.g., your PC → the switch, or switch → router).
+
+it helps upper layers of OSI model to access media using techniques such as framing.
+
+
+<img width="1313" height="716" alt="image" src="https://github.com/user-attachments/assets/f84efd49-71f4-4da8-a0b0-80061c2fae71" />
+
+
+  in the above image in the end of each network decapsulation and encapsulation takes place. 
+  in the laptop connected in the end of network  2 after decapsulation data is transferred to its network layer.
+
+  Data link layer also controls how data is placed and received from the media using media access control.
+
+  Tail of each frame contains bits which are used to detect error in the received frame.
+
+<h2>PHYSICAL LAYER</h2>
+
+
+The Physical Layer converts digital bits into physical signals (voltage, light pulses, or radio waves) and transmits them across a medium like cable or air.
+
+  <img width="919" height="719" alt="image" src="https://github.com/user-attachments/assets/3fe128b0-4e12-4524-90a5-4225d07d5b81" />
 
   
