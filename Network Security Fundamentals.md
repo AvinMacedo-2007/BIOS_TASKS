@@ -69,5 +69,34 @@ transport layer performs two types of services - connectionless (done by UDP) an
 <img width="1274" height="932" alt="image" src="https://github.com/user-attachments/assets/bcc575ab-6fd3-4e82-bef9-ad7cffa86d32" />
 <img width="1274" height="298" alt="image" src="https://github.com/user-attachments/assets/7db42f15-1663-4619-8ae1-e48f7c1e1dc6" />
 
- 
-     
+<h2>NETWORK LAYER</h2>
+
+network layer works for the transmission of the received data segments from one computer to the another located in different networks.
+data units in the network layer is called packets . It is the layer where routers reside.
+
+Functions of network layer are -
+
+  - Logical addressing
+  - Path determination
+  - Routing
+    
+ip addressing done in network layer in called logical addressing.
+senders and receivers ip addresses are assigned to each segment to form an ip packet, ip addresses are assigned to ensure that each data packet can reach the correct destination.
+
+routing is a method of moving data packet from source to destination and based of the logical address format.
+
+choosing the best possible path for data delivery from source to destination is called path determination.
+
+<h2>DATA LINK LAYER</h2>
+
+In data link layer mac addresses of sender and receiver is assigned to the data packet to form a frame.
+<br>
+<br>
+<img width="550" height="304" alt="image" src="https://github.com/user-attachments/assets/20941046-a1d4-4699-b172-88af536bc15b" />
+
+A MAC address is a unique 48-bit hardware ID (e.g., AA:BB:CC:DD:EE:FF) burned into a NIC by the manufacturer, used to identify a device on the local network .
+
+Unlike an IP address which changes per network, a MAC address is fixed to the hardware — it's your device's fingerprint.
+The Data Link Layer handles node-to-node delivery — moving data between two devices that are directly connected on the same network segment (e.g., your PC → the switch, or switch → router).
+
+  
