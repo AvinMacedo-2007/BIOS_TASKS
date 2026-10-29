@@ -168,6 +168,7 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
 <img width="1119" height="536" alt="image" src="https://github.com/user-attachments/assets/6995dfc1-36a5-43bd-aa4d-4038eb2d6f78" />
 
 SYN (Synchronize): A signal sent by the client to the server to initiate a connection. It tells the server, "I want to connect, and here is my starting sequence number."
+
 ACK (Acknowledgment): A signal used to confirm receipt of a previous packet. It tells the sender, "I received your message, and here is the next sequence number I expect."
 
   
