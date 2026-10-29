@@ -137,7 +137,7 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
   
 <h1>TCP/IP MODEL</h1>
 
-<img width="860" height="757" alt="image" src="https://github.com/user-attachments/assets/4fad5a6e-9c2f-40a2-96c3-a283bdbd7940" />
+<img width="860" height="757" alt="image" src="https://github.com/user-attachments/assets/4fad5a6e-9c2f-40a2-963-a283bdbd7940" />
 
 <img width="1256" height="598" alt="image" src="https://github.com/user-attachments/assets/2b216451-1667-487b-b36f-2f7ad4e3a694" />
 
@@ -160,3 +160,36 @@ Divided into two sub layers -
 
  CSMA/CD - when one device is transmitting data other stop and wait.
          - when collision happens both the devices wait for a random amount of time and retransmit the data .
+
+  <h3>LLC LAYER</h3>
+
+Performs error control and error control.
+
+error control - done by error detection and retransmission.
+                error checking is done by the error checking bits added at the end of the trailer.
+                retransmission is done by automatic repeat request (ARQ), reciver sends ACk when a frame is recived , else retransmission takes place.
+
+the services of the transport layer is usually bypassed as these services are provided by transport layer.
+
+<h3>NETWORK LAYER</h3>
+
+adds ip addresses to the received tcp segments to form an ip packet and the sends them using routers.
+
+so the functions are -
+        - logical addressing
+        - routing
+        - path determination 
+ip protocol is used in this layer.
+
+<img width="1340" height="725" alt="image" src="https://github.com/user-attachments/assets/4031788f-788b-4c8a-9e44-94f3c36112ff" />
+
+
+<img width="681" height="189" alt="image" src="https://github.com/user-attachments/assets/d11c367f-e6d6-4791-af84-70582276cbac" />
+
+<h3>TRANSPORT LAYER</h3>
+
+Receives data from application layer , then tcp (connection oriented) or udp (connection less) is selected.
+
+<h3>APPLICATION LAYER</h3>
+
+used by user applications
