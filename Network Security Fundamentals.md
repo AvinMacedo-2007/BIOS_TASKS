@@ -11,7 +11,7 @@ some common protocols are HTTP, SMTP, FTP, and DNS.(these provide a stadardised 
 
 <h2>PRESENTATION LAYER</h2>
 
-Receives data from presentation layer .
+Receives data from application layer .
 <br>
 Performs three important tasks ---
 
