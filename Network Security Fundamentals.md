@@ -216,8 +216,11 @@ the services of the transport layer is usually bypassed as these services are pr
 adds ip addresses to the received tcp segments to form an ip packet and the sends them using routers.
 
 so the functions are -
+
         - logical addressing
+        
         - routing
+        
         - path determination 
 ip protocol is used in this layer.
 
