@@ -134,6 +134,9 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
    - IPv4 and
    - IPv6
 
+<h1>TCP - THREE-WAY HANDSHAKE</h1>
+
+<img width="1119" height="536" alt="image" src="https://github.com/user-attachments/assets/6995dfc1-36a5-43bd-aa4d-4038eb2d6f78" />
 
   
 <h1>TCP/IP MODEL</h1>
