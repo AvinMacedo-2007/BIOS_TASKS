@@ -78,9 +78,11 @@ data units in the network layer is called packets . It is the layer where router
 Functions of network layer are -
 
   - Logical addressing
+    
   - Path determination
+
   - Routing
-  - 
+    
     
 ip addressing done in network layer in called logical addressing.
 senders and receivers ip addresses are assigned to each segment to form an ip packet, ip addresses are assigned to ensure that each data packet can reach the correct destination.
