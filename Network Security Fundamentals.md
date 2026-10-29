@@ -168,7 +168,7 @@ Divided into two sub layers -
 
   <h3>LLC LAYER</h3>
 
-Performs error control and error control.
+Performs flow control and error control.
 
 error control - done by error detection and retransmission.
                 error checking is done by the error checking bits added at the end of the trailer.
