@@ -118,7 +118,7 @@ it helps upper layers of OSI model to access media using techniques such as fram
 
 The Physical Layer converts digital bits into physical signals (voltage, light pulses, or radio waves) and transmits them across a medium like cable or air.
 
-  <img width="919" height="719" alt="image" src="https://github.com/user-attachments/assets/3fe128b0-4e12-4524-90a5-4225d07d5b81" />
+  <img width="919" height="719" alt="image" src="https://github.com/user-attachments/assets/3fe128b0-4e12-4524-90a5-to4225d07d5b81" />
 
 
 
@@ -132,4 +132,31 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
   Two types of ip address are there -
    - IPv4 and
    - IPv6
+
+
   
+<h1>TCP/IP MODEL</h1>
+
+<img width="860" height="757" alt="image" src="https://github.com/user-attachments/assets/4fad5a6e-9c2f-40a2-96c3-a283bdbd7940" />
+
+<img width="1256" height="598" alt="image" src="https://github.com/user-attachments/assets/2b216451-1667-487b-b36f-2f7ad4e3a694" />
+
+<h2>PHYSICAL LAYER</h2>
+
+converts binary sequence into signals and sends it over local media.
+
+common protocol in this layer is ethernet.
+
+<h2>DATA LINK LAYER</h2>
+
+Divided into two sub layers -
+  - MAC (media access control) sub layer
+  - LLC (logic link control) sub layer
+
+
+<h3>MAC LAYER</h3>
+    <img width="1340" height="663" alt="image" src="https://github.com/user-attachments/assets/19636d86-dfae-4cf6-87de-b4569cd1a0aa" />
+
+
+ CSMA/CD - when one device is transmitting data other stop and wait.
+         - when collision happens both the devices wait for a random amount of time and retransmit the data .
