@@ -51,6 +51,7 @@ Controls the reliability of communication through -
    - Segmentation
    - Flow control
    - Error control
+
 In segmentation the data received from session layer in divided into smaller data packets (segments) and they are assigned sequence and source and destination port number.
 port number helps to direct each segment to correct application.
 sequence number helps to reassemble the data.
