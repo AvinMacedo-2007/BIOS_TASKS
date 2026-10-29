@@ -137,7 +137,8 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
   
 <h1>TCP/IP MODEL</h1>
 
-<img width="860" height="757" alt="image" src="https://github.com/user-attachments/assets/4fad5a6e-9c2f-40a2-963-a283bdbd7940" />
+<img width="950" height="833" alt="image" src="https://github.com/user-attachments/assets/62f32a43-36c7-47b2-8ccf-bf4cbff2a204" />
+
 
 <img width="1256" height="598" alt="image" src="https://github.com/user-attachments/assets/2b216451-1667-487b-b36f-2f7ad4e3a694" />
 
