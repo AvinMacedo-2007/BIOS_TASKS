@@ -134,6 +134,35 @@ The Physical Layer converts digital bits into physical signals (voltage, light p
    - IPv4 and
    - IPv6
 
+     <h2>IPv4</h2>
+
+     <img width="1318" height="628" alt="image" src="https://github.com/user-attachments/assets/7c4e2249-9b15-40e8-b013-3a79f93beaf0" />
+     
+     IPv4 is a 32 bit address.
+     2^32 devices(nearly 4 billion) can be addressed using IPv4.
+
+     <h2>IPv6</h2>
+
+     <img width="1403" height="735" alt="image" src="https://github.com/user-attachments/assets/06c5edbb-8045-40e7-a0de-10d03f1138aa" />
+     
+     IPv6 is a 128 bit address.
+     2^128 devices can be addressed using IPv6.
+
+     IP address can be classified into dynamic and static.
+
+     Dynamic
+     -when we are connecting our device to internet our internet provider will assign our device with a unique ip address according to the availability from a range of ip address.
+     -every time we connect to the internet the ip address keeps changing .
+
+     Static
+     -never change
+     -serve as permanent ip addresses.
+
+     these are used by DNS servers.
+     
+
+
+
 <h1>TCP - THREE-WAY HANDSHAKE</h1>
 
 <img width="1119" height="536" alt="image" src="https://github.com/user-attachments/assets/6995dfc1-36a5-43bd-aa4d-4038eb2d6f78" />
